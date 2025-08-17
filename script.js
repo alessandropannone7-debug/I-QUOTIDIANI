@@ -39,4 +39,3 @@ for(let i=0; i<numberOfDrops; i++){
 }
 window.addEventListener('pointerdown', startOnce, { once: true });
 
-updateButton();
