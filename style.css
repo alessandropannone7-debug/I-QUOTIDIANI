@@ -134,6 +134,22 @@ li:hover {
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #74ABE2, #5563DE);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
 #rain {
   position: fixed;
   top: 0;
@@ -160,10 +176,22 @@ li:hover {
   }
 }
 
+.link {
+  display: block;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  background: white;
+  color: #333;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  position: relative;
+  z-index: 1; /* Assicura che i link stiano sopra la pioggia */
+}
 
-
-
-
-
-
+.link:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
 
