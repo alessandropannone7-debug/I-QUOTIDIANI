@@ -24,7 +24,10 @@ function startOnce() {
   if (!started) {
     audio.play().then(() => updateButton()).catch(()=>{});
     started = true;
-    const rain = document.getElementById('rain');
+  
+updateButton();
+
+  const rain = document.getElementById('rain');
 const numberOfDrops = 100;
 
 for(let i=0; i<numberOfDrops; i++){
@@ -35,8 +38,3 @@ for(let i=0; i<numberOfDrops; i++){
   drop.style.animationDelay = Math.random() * 2 + 's';
   rain.appendChild(drop);
 }
-  }
-}
-window.addEventListener('pointerdown', startOnce, { once: true });
-
-updateButton();
