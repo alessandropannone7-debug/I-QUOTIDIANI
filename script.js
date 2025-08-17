@@ -28,13 +28,13 @@ function startOnce() {
 updateButton();
 
   const rain = document.getElementById('rain');
-const numberOfDrops = 100;
+const numberOfDrops = 150;
 
-for(let i=0; i<numberOfDrops; i++){
+for(let i = 0; i < numberOfDrops; i++){
   const drop = document.createElement('div');
   drop.className = 'drop';
   drop.style.left = Math.random() * 100 + 'vw';
-  drop.style.animationDuration = 0.5 + Math.random() * 0.5 + 's';
+  drop.style.animationDuration = 0.5 + Math.random() * 0.7 + 's';
   drop.style.animationDelay = Math.random() * 2 + 's';
   rain.appendChild(drop);
 }
