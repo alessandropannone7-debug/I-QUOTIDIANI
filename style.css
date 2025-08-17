@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #E5E5E5;
     text-align: center  !important;
 }
   
@@ -70,6 +70,8 @@ li:hover {
     display: flex;
     align-items: center;
 }
+
 .color-blue{
     color:#3b44f6;
 }
+
