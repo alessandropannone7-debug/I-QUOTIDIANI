@@ -75,70 +75,11 @@ li:hover {
     color:#3b44f6;
 }
 
-/* 🎵 Widget musicale */
-#music-widget {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  padding: .8rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  z-index: 9999;
-  color: black;
-  backdrop-filter: blur(5px);
-}
-
-#toggle {
-  border: none;
-  background: #5563DE;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: .5rem .8rem;
-  border-radius: .8rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-#toggle:hover {
-  background: #2e3bb7;
-}
-
-#volume {
-  -webkit-appearance: none;
-  width: 100px;
-  height: 6px;
-  border-radius: 5px;
-  background: #ccc;
-  outline: none;
-  cursor: pointer;
-}
-#volume::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #5563DE;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-#volume::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #5563DE;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #74ABE2, #5563DE);
+  background: black;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -163,17 +104,18 @@ body {
 
 .drop {
   position: absolute;
-  top: -10px;
+  top: -20px;
   width: 2px;
-  height: 10px;
-  background: rgba(255,255,255,0.6);
-  animation: fall linear infinite;
+  height: 15px;
+  background: rgba(255,255,255,0.7);
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
 }
 
 .link {
@@ -187,7 +129,7 @@ body {
   font-weight: bold;
   transition: background 0.3s, transform 0.2s;
   position: relative;
-  z-index: 1; /* Assicura che i link stiano sopra la pioggia */
+  z-index: 1;
 }
 
 .link:hover {
@@ -195,3 +137,34 @@ body {
   transform: scale(1.05);
 }
 
+#audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+#audio-controls button {
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#audio-controls button:hover {
+  background: #ddd;
+  transform: scale(1.1);
+}
+
+#audio-controls input[type="range"] {
+  cursor: pointer;
+}
